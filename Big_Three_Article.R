@@ -1,3 +1,5 @@
+# Code to produce some tables from the article on Big Three.
+
 #setwd("/home/usdandres/Documents/Study_stuff/Sports Research/Tennis/tennis_atp-master")
 
 library(stringr)

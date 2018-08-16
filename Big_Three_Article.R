@@ -1,6 +1,6 @@
 # Code to produce some tables from the article on Big Three.
 
-#setwd("/home/usdandres/Documents/Study_stuff/Sports Research/Tennis/tennis_atp-master")
+# setwd("/home/usdandres/Documents/Study_stuff/Sports Research/Tennis/")
 
 library(stringr)
 library(tidyverse)
@@ -16,11 +16,12 @@ data <- list()
 ## Simply download the atp_matches_[insert year].csv files.
 
 for (i in 1:n.years){
-  data[[i]] <- read.csv(paste("atp_matches_",years[i],".csv",sep=""),as.is=T)
+  data[[i]] <- read.csv(paste("tennis_atp-master/atp_matches_",years[i],".csv",sep=""),as.is=T)
   data[[i]]$winner_age <- round(data[[i]]$winner_age)
   data[[i]]$loser_age <- round(data[[i]]$loser_age)
   data[[i]]$year <- sapply(data[[i]]$tourney_id,function(x) substr(as.character(x),1,4))
 }
+
 
 
 data.full <- NULL
